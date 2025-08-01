@@ -1,0 +1,51 @@
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+#measurements {
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+#measurements p {
+  margin: 0.2rem 0;
+}
+
+dialog article {
+  max-width: 400px;
+}
+#spectrumChart {
+  width: 100% !important;
+  height: 60vw !important;
+  max-height: 400px;
+  min-height: 220px;
+  display: block;
+}
+@media (max-width: 600px) {
+  #spectrumChart {
+    height: 50vw !important;
+    max-height: 300px;
+    min-height: 180px;
+  }
+}

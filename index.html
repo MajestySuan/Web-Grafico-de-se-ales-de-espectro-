@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espectro de Señales - ERE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+</head>
+<body>
+
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>Señales en el espectro</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#" role="button">Creadores</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h2>Parámetros de entrada</h2>
+    <form id="paramsForm">
+      <h3>Ruido Térmico</h3>
+      <input type="number" step="any" name="temp" placeholder="Temperatura (Kelvin)" required value="290" />
+      <input type="number" step="0.1" name="bw" placeholder="Ancho de Banda (Hz)" required />
+      <input type="number" step="0.1" name="noiseSystem" placeholder="Ruido del sistema (opcional) dBm" />
+
+      <h3>Señales</h3>
+      <fieldset>
+        <legend>Señal 1</legend>
+        <input type="number" step="0.1" name="power1" placeholder="Potencia (dBm)" required />
+        <input type="number" step="0.1" name="bw1" placeholder="Ancho de Banda (Hz)" required />
+        <input type="number" step="0.1" name="fc1" placeholder="Frecuencia Central (Hz)" required />
+      </fieldset>
+      <fieldset>
+        <legend>Señal 2</legend>
+        <input type="number" step="0.1" name="power2" placeholder="Potencia (dBm)" required />
+        <input type="number" step="0.1" name="bw2" placeholder="Ancho de Banda (Hz)" required />
+        <input type="number" step="0.1" name="fc2" placeholder="Frecuencia Central (Hz)" required />
+      </fieldset>
+      <fieldset>
+        <legend>Señal 3</legend>
+        <input type="number" step="0.1" name="power3" placeholder="Potencia (dBm)" required />
+        <input type="number" step="0.1" name="bw3" placeholder="Ancho de Banda (Hz)" required />
+        <input type="number" step="0.1" name="fc3" placeholder="Frecuencia Central (Hz)" required />
+      </fieldset>
+
+      <button type="submit">Graficar</button>
+    </form>
+
+    <h3>Gráfica del Espectro</h3>
+    <canvas id="spectrumChart"></canvas>
+    <button id="resetZoomBtn">Resetear Zoom</button>
+
+    <h3>Mediciones</h3>
+    <div id="measurements" class="container"></div>
+  </main>
+  
+  <dialog id="creadoresModal">
+  <article>
+    <header>
+      <h3>Información del Proyecto</h3>
+    </header>
+    <p><strong>Creadores:</strong><br>
+      Daniel Santiago Suancha Araujo<br>
+      Diego Alejandro Niño Cuervo 
+    </p>
+    <p><strong>Profesor:</strong><br>
+      Marlon Patiño Bernal
+    </p>
+    <p><strong>Universidad:</strong><br>
+      Universidad Distrital Francisco José de Caldas
+    </p>
+    <footer>
+      <button onclick="document.getElementById('creadoresModal').close()">Cerrar</button>
+    </footer>
+  </article>
+</dialog>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
